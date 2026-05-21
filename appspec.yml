@@ -1,0 +1,13 @@
+version: 0.0
+os: linux
+
+files:
+  - source: /
+    destination: /var/www/html/codeDeploy-Marialy
+
+permissions:
+  - object: /var/www/html/codeDeploy-Marialy
+    pattern: "**"
+    owner: www-data
+    group: www-data
+    mode: 755
