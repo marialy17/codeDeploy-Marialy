@@ -3,11 +3,10 @@ os: linux
 
 files:
   - source: /
-    destination: /var/www/html/codeDeploy-Marialy
+    destination: /home/admin/codedeploy-temp
 
-permissions:
-  - object: /var/www/html/codeDeploy-Marialy
-    pattern: "**"
-    owner: www-data
-    group: www-data
-    mode: 755
+hooks:
+  AfterInstall:
+    - location: scripts/deploy.sh
+      timeout: 300
+      runas: root
